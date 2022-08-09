@@ -6,7 +6,7 @@ export default createTheme({
       main: "#203040",
     },
     secondary: {
-      main: "#DD1BB3",
+      main: "#ffc000",
     },
   },
 });
