@@ -20,7 +20,7 @@ const Layout = () => {
         pauseOnHover
         transition={Bounce}
       />
-      <Stack>
+      <Stack height="100%">
         <Header />
         <Outlet />
         <Footer />

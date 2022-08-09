@@ -6,8 +6,10 @@ const Footer = () => {
     <>
       <Stack
         bgcolor="primary.main"
+        flexShrink={1}
+        mt={10}
         sx={{
-          position: "absolute",
+          position: "fixed",
           bottom: 0,
           left: 0,
           right: 0,
