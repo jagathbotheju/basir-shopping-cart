@@ -2,11 +2,8 @@ import {
   Box,
   Button,
   Card,
-  CardActionArea,
-  CardActions,
   CardContent,
   CardMedia,
-  Stack,
   Typography,
 } from "@mui/material";
 import React from "react";
