@@ -2,6 +2,7 @@ import { Container, Grid, Stack, Typography } from "@mui/material";
 import React, { useState } from "react";
 import { useEffect } from "react";
 import { useSelector } from "react-redux";
+import Cart from "../components/Cart";
 import Filter from "../components/Filter";
 import ProductItem from "../components/ProductItem";
 
@@ -31,7 +32,6 @@ const HomePage = () => {
 
   useEffect(() => {
     let sproducts;
-    console.log(filteredProducts);
     if (filteredProducts.length === 0) {
       sproducts = products.slice().sort((a, b) => {
         return sortFilter === "lowest"
@@ -67,7 +67,7 @@ const HomePage = () => {
 
   return (
     <>
-      <Container sx={{ mb: 10 }}>
+      <Container maxWidth="xl" sx={{ mb: 10 }}>
         <Typography mt={4} variant="h5">
           Products
         </Typography>
@@ -78,7 +78,8 @@ const HomePage = () => {
           gap={2}
           my={2}
         >
-          <Stack width="70%">
+          {/* product list */}
+          <Stack width="80%">
             <Filter productsCount={filteredProducts.length} />
             {filteredProducts.length === 0 ? (
               <Container sx={{ mt: 20 }}>
@@ -87,15 +88,17 @@ const HomePage = () => {
                 </Typography>
               </Container>
             ) : (
-              <Grid container gap={2}>
+              <Grid container gap={2} justifyContent="center">
                 {filteredProducts.map((product) => (
                   <ProductItem key={product._id} product={product} />
                 ))}
               </Grid>
             )}
           </Stack>
-          <Stack width="30%" bgcolor="grey.300">
-            <Typography>CART</Typography>
+
+          {/* cart */}
+          <Stack width="25%">
+            <Cart />
           </Stack>
         </Stack>
       </Container>
