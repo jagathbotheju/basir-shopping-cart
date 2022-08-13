@@ -61,7 +61,6 @@ const HomePage = () => {
           : -1;
       });
     }
-    console.log(sproducts);
     setFilteredProducts(sproducts);
   }, [sortFilter]); // eslint-disable-line react-hooks/exhaustive-deps
 
