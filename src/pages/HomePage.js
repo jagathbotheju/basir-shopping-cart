@@ -88,8 +88,12 @@ const HomePage = () => {
               </Container>
             ) : (
               <Grid container gap={2} justifyContent="center">
-                {filteredProducts.map((product) => (
-                  <ProductItem key={product._id} product={product} />
+                {filteredProducts.map((product, index) => (
+                  <ProductItem
+                    key={product._id}
+                    product={product}
+                    index={index}
+                  />
                 ))}
               </Grid>
             )}
